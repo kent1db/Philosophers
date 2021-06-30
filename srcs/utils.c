@@ -6,7 +6,7 @@
 /*   By: qurobert <qurobert@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:08:05 by qurobert          #+#    #+#             */
-/*   Updated: 2021/06/30 19:16:09 by qurobert         ###   ########lyon.fr   */
+/*   Updated: 2021/06/30 19:46:53 by qurobert         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	ft_all_eat_at_time(t_philo *philo, t_all *a)
 
 	elem = philo;
 	i = 0;
-	usleep(2000);
 	gettimeofday(&time, NULL);
 	res = (time.tv_sec * 1000 + time.tv_usec / 1000) - a->beg_time;
+	usleep(2000);
 	while (i < a->nb_philo)
 	{
 		pthread_mutex_lock(&elem->lock);
