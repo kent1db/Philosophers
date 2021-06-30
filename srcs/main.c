@@ -6,7 +6,7 @@
 /*   By: qurobert <qurobert@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 19:09:36 by qurobert          #+#    #+#             */
-/*   Updated: 2021/06/30 18:53:48 by qurobert         ###   ########lyon.fr   */
+/*   Updated: 2021/06/30 19:24:47 by qurobert         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,12 @@ int	ft_main_loop(t_all *a, t_philo *philo)
 int	main(int ac, char **av)
 {
 	t_all			*a;
-	int				count;
 	t_philo			*philo;
 	struct timeval	time;
 
 	gettimeofday(&time, NULL);
 	a = NULL;
 	philo = NULL;
-	count = 0;
 	a = ft_init_var(time);
 	if (ft_check_err_and_parse(ac, av, a, &philo))
 		return (1);
@@ -74,7 +72,6 @@ int	main(int ac, char **av)
 	{
 		if (a->nb_time_eat > 0 && ft_all_eat(philo, a))
 			break ;
-		count++;
 	}
 	ft_destroy_and_free(a, &a->gc);
 	return (0);
